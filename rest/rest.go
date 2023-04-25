@@ -11,6 +11,8 @@ type RestMessage struct {
 }
 
 func MustEncode(w http.ResponseWriter, i interface{}) {
+	requestID := r.Context().Value("request_id")
+	w.Header().Set("RequestID", requestID.(string))
 	w.Header().Set("Cache-Control", "no-cache")
 	w.Header().Set("Content-type", "application/json;charset=utf-8")
 	e := json.NewEncoder(w)
