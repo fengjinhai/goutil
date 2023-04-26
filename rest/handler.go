@@ -43,6 +43,7 @@ func RequestIDHandler(fieldKey, headerName string) func(next http.Handler) http.
 			}
 			if headerName != "" {
 				r.Header.Set(headerName, id.String())
+				w.Header.Set(headerName, id.String())
 			}
 			next.ServeHTTP(w, r)
 		})
