@@ -17,7 +17,7 @@ import (
 )
 
 var (
-	dir = flag.String("zlog_dir",
+	dir = flag.String("rest_zlog_dir",
 		filepath.Join(filepath.Dir(os.Args[0]), "zerolog"), "zerolog dir")
 )
 
